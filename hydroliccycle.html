@@ -1,0 +1,286 @@
+<html>
+<head><title>The Hydrolic Cycle</title></head>
+<style>
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}	body {
+	color: #000000;
+	background-color: #ffffff;
+	margin: 0;
+	padding: 0;
+	font-family: 'Noto Sans', sans-serif, helvetica, arial;
+}
+
+.navbar {
+	background-color: black;
+	overflow: hidden;
+}
+
+.navbar a {
+	float: right;
+	background-color: black;
+	color: #ffffff;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	box-shadow: inset 0px 0px 0px 0px white;
+	transition: .25s;
+}
+
+.navbar .logo {
+	float: left;
+	background-color: black;
+	color: #ffffff;
+	font-size: 26px;
+	text-align: center;
+	padding: 10px 14px 0px 14px;
+	font-weight: 300;
+	text-decoration: none;
+	font-family: 'ubuntu', monospace, arial;
+}
+
+.navbar a:hover, .navbar a:focus {
+	background-color: white;
+	color: black;
+}
+
+.content {
+	text-align: center;
+	padding-left: 15%;
+	padding-right: 15%;
+	position: fixed;
+}
+.context {
+	left:-999px;
+	opacity: 0.0;
+	top: auto;
+	position: absolute;
+	z-index:-999;
+}
+
+.context:active, .context:focus {
+	left: auto;
+	top: auto;
+	text-align:center;
+	transition: .25s;
+	z-index: 999;
+	background-color: white;
+	padding: 5px;
+	border: 2px solid #cacaca;
+	opacity: 1.0;
+}
+
+h1 {
+	font-weight: 300;
+	font-family: 'Roboto', sans-serif, arial;
+}
+h2 {
+    font-weight: 300;
+    font-family: 'Ubuntu';
+}
+h3 {
+    font-weight: 300;
+    font-family: 'Ubuntu';
+}
+.tabs .card:hover {
+	box-shadow: -2px -2px 0px 0px #00ffcc, 2px 2px 0px 0px #00ffcc, 2px -2px 0px 0px #00ffcc, -2px 2px 0px 0px #00ffcc;
+}
+
+@media only screen and (max-width: 500px) {
+	.navbar a {
+		float: none;
+		display: block;
+	}
+
+	.navbar .logo {
+		float: none;
+		display: block;
+		padding-bottom: 5px;
+	}
+	.navbar {
+		float: none;
+	}
+
+	.content {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+.sidebar a {
+	color: #000000;
+}
+
+.readmore {
+	display: block;
+	background-color: #ffffff;
+	padding: 5px;
+	border-radius: 10px;
+	padding: 10px;
+	border: 1px solid #cacaca;
+	color: #505050;
+	text-decoration: none;
+}
+
+.readmore:hover {
+	background-color: #eaeaea;
+}
+
+ul.children {
+	padding: 0px;
+	margin: 0px;
+}
+.p1 {
+  max-width: 550px;
+  min-width: 100px;
+}
+.border {
+border: 1px solid black;
+width: 680px;
+height: 387px;
+}
+.border2 {
+border: 1px solid black;
+}
+.border4 {
+border: 1px solid black;
+width: 750; 
+height: 500;
+}
+.border3 {
+border: 1px solid black;
+height: 600px;
+width: 850px;
+}
+.p1 {
+  max-width: 550px;
+  min-width: 100px;
+}
+.td1 {
+  max-width: 180px;
+  min-width: 1px;
+}
+table {
+	border-collapse: collapse;
+}
+
+.td {
+	border: 1px solid #dddddd;
+	padding: 10px;
+	padding-right: 1px;
+    position: center;
+}
+.th {
+	border: 1px solid #dddddd;
+	padding: 10px;
+	padding-right: 1px;
+	padding-left: 1px;
+	position: center;
+}
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown .dbutton {
+	background-color: transparent;
+	color: #ffffff;
+	border: 0;
+	outline: none;
+	text-align: center;
+	text-decoration: none;
+	transition: .25s;
+	margin: 0;
+}
+
+.dbutton a {
+	padding: 14px 16px;
+	display: block;
+	margin: 0;
+	float: none;
+}
+
+.ditems {
+	visibility: hidden;
+	position: absolute;
+	min-width: 180px;
+	box-shadow: 0px 2px 5px #0a1129;
+	opacity: 0.0;
+	transform: scaleY(0.9);
+	transition: .25s;
+	z-index: 5;
+}
+
+.ditems a {
+	float: none;
+	background-color: #ffffff;
+	color: #000000;
+	padding: 10px;
+	display: block;
+	text-align: left;
+	transition: none;
+}
+
+.ditems a:hover {
+	background-color: #eaeaea;
+	color: #000000;
+}
+
+.dropdown:hover .ditems {
+	visibility: visible;
+	transform: scaleY(1);
+	opacity: 1.0;
+}
+</style>
+
+<div class="navbar">
+<span class="logo"><style="font-family:ubuntu">TechBizmo</span>
+<div class="dropdown">
+<div class="dbutton"><a>Sections</a></div>
+<div class="ditems">
+<a href='index.html'>Home</a><a href='aquifer.html'>What's an Aquifer?</a><a href='permeability.html'>What's Permeability?</a><a href='satunsat.html'>Saturated & Unsaturated Zones</a><a href='hydroliccycle.html'>The Hydrolic Cycle</a><a href='runoff.html'>Runoff & Wells</a><a href='scc.html'>Sinkholes, Caves, & CODs</a><a href='definitions.html'>Definitions</a></div>
+</div>
+</div>
+
+<center><h1 style="font-family:ubuntu">The Hydrolic Cycle</h1></center> 
+
+<center><h2 style="font-family:ubuntu">What are the 4 Stages?</h2></center>
+<center>
+<table>
+<tr>
+<td>
+<div class="border2">
+<img src="hydroliccycle.png" height="500" width="850">
+</div>
+</td>
+<td>
+<ul>
+<font size="6"><li>Precipitation</li></font>
+<font size="6"><li>Evaporation</li></font>
+<font size="6"><li>Transpiration</li></font>
+<font size="6"><li>Condensation</li></font>
+</ul>
+</td>
+</tr>
+</table>
+</center>
+
+<center><p style="font-family:ubuntu"><font size="5">These are the necessary stages of water from the sky, to Earth's ground.</font></p></center>
+
+
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer>
+<div class="footer">
+<center><p style="font-family:arial">Copyright &copy TechBizmo 2019</p></center>
+</div>
+</footer>
+</html>
